@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">862893467632-je56s5mep07hacmr7do20spjffkmqaia.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">862893467632</string>
+    <string name="google_api_key" translatable="false">AIzaSyD-_F29BRyQk1-6hqA7wq169iCQ8Ky_cKc</string>
+    <string name="google_app_id" translatable="false">1:862893467632:android:2a083904e636f3cf12df35</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD-_F29BRyQk1-6hqA7wq169iCQ8Ky_cKc</string>
+    <string name="google_storage_bucket" translatable="false">spot-me-44810.appspot.com</string>
+    <string name="project_id" translatable="false">spot-me-44810</string>
+</resources>
