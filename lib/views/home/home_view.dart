@@ -13,10 +13,10 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  final _pc = PanelController();
+
   @override
   Widget build(BuildContext context) {
-    final _pc = PanelController();
-
     return Scaffold(
       body: SlidingUpPanel(
         minHeight: 200,
