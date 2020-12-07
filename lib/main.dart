@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:spot_me/widgets/main_screen/main_screen.dart';
+import 'package:spot_me/widgets/home/home_screen.dart';
 
 void main() {
   runApp(MyApp());
