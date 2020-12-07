@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:spot_me/colors.dart';
+import '../../shared/colors.dart';
 
-class CreateSpotScreen extends StatelessWidget {
+class CreateSpotView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
@@ -10,10 +10,10 @@ class CreateSpotScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text("Create a spot"),
           elevation: 0,
-          backgroundColor: AppColors.magentaColor,
+          backgroundColor: AppColors.magenta,
           brightness: Brightness.dark,
         ),
-        body: Container(color: AppColors.magentaColor),
+        body: Container(color: AppColors.magenta),
       ),
     );
   }

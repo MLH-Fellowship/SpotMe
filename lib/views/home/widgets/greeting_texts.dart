@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:spot_me/public_env.dart';
+import 'package:spot_me/config.dart';
 import 'package:weather/weather.dart';
 
-class GreetingTexts extends StatelessWidget {
-  const GreetingTexts({
+class GreetingTextsWidget extends StatelessWidget {
+  const GreetingTextsWidget({
     Key key,
   }) : super(key: key);
 
@@ -20,7 +20,7 @@ class GreetingTexts extends StatelessWidget {
   }
 
   Future<Weather> getWeather() async {
-    WeatherFactory wf = new WeatherFactory(PublicEnv.OWM_KEY);
+    WeatherFactory wf = new WeatherFactory(AppConfig.OWM_KEY);
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.medium);
     Weather w = await wf.currentWeatherByLocation(

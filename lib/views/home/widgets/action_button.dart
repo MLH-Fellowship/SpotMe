@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ActionButton extends StatelessWidget {
-  const ActionButton({
+class ActionButtonWidget extends StatelessWidget {
+  const ActionButtonWidget({
     Key key,
     @required this.onPressed,
     @required this.text,

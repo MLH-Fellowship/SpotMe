@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:spot_me/widgets/main_screen/main_screen.dart';
+import 'package:spot_me/views/home/home_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,12 +12,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Spot Me',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        appBarTheme:
-            AppBarTheme(color: Colors.white, brightness: Brightness.light),
-      ),
-      home: MainScreen(title: 'Spot Me'),
+      theme: ThemeData.light(),
+      home: HomeView(),
     );
   }
 }
