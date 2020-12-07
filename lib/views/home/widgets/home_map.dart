@@ -1,9 +1,14 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
+import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HomeMapWidget extends StatefulWidget {
+  final Position position;
+
+  const HomeMapWidget({Key key, this.position}) : super(key: key);
+
   @override
   State<HomeMapWidget> createState() => HomeMapWidgetState();
 }
@@ -11,21 +16,25 @@ class HomeMapWidget extends StatefulWidget {
 class HomeMapWidgetState extends State<HomeMapWidget> {
   Completer<GoogleMapController> _controller = Completer();
 
-  static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 18,
-  );
+  Position get position => widget.position;
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: GoogleMap(
-        mapType: MapType.hybrid,
-        initialCameraPosition: _kGooglePlex,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
+        body: GoogleMap(
+      mapType: MapType.hybrid,
+      myLocationEnabled: true,
+      myLocationButtonEnabled: true,
+      padding: EdgeInsets.only(top: 30),
+      initialCameraPosition: CameraPosition(
+        target: position == null
+            ? LatLng(50, 50)
+            : LatLng(position.latitude, position.longitude),
+        zoom: 18,
       ),
-    );
+      onMapCreated: (GoogleMapController controller) {
+        _controller.complete(controller);
+      },
+    ));
   }
 }

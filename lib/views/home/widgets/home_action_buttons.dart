@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spot_me/shared/colors.dart';
+
 import '../../create_spot/create_spot_view.dart';
 import 'action_button.dart';
 
@@ -34,7 +35,7 @@ class HomeActionButtonsWidget extends StatelessWidget {
             Hero(
               tag: "create",
               child: ActionButtonWidget(
-                text: "Create volunteers",
+                text: "Need volunteers",
                 color: AppColors.magenta,
                 onPressed: () {
                   Get.to(CreateSpotView());

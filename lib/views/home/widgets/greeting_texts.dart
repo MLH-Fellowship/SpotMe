@@ -4,8 +4,11 @@ import 'package:spot_me/config.dart';
 import 'package:weather/weather.dart';
 
 class GreetingTextsWidget extends StatelessWidget {
+  final Position position;
+
   const GreetingTextsWidget({
     Key key,
+    this.position,
   }) : super(key: key);
 
   String getGreetingText() {
@@ -21,8 +24,6 @@ class GreetingTextsWidget extends StatelessWidget {
 
   Future<Weather> getWeather() async {
     WeatherFactory wf = new WeatherFactory(AppConfig.OWM_KEY);
-    Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.medium);
     Weather w = await wf.currentWeatherByLocation(
         position.latitude, position.longitude);
     return w;
@@ -42,7 +43,7 @@ class GreetingTextsWidget extends StatelessWidget {
           future: getWeather(),
           initialData: "Loading",
           builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
+            if (snapshot.data == null) {
               return Text("Loading the weather...");
             }
             Weather weather = snapshot.data as Weather;
@@ -56,7 +57,7 @@ class GreetingTextsWidget extends StatelessWidget {
                         weather.weatherIcon +
                         ".png",
                   ),
-                  Text(weather.temperature.celsius.toString() +
+                  Text(weather.temperature.celsius.toStringAsFixed(0) +
                       "º C | " +
                       weather.areaName)
                 ],
