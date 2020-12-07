@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:spot_me/colors.dart';
-import 'spot_card.dart';
-import 'spot.dart';
+import 'widgets/spot_card.dart';
+import '../../models/spot_model.dart';
+import '../../shared/colors.dart';
 
-class AllSpotsScreen extends StatelessWidget {
-  List _spots = [
-    Spot("56 Groot Street",
+class AllSpotsView extends StatelessWidget {
+  final List _spots = [
+    SpotModel("56 Groot Street",
         "Need help with gardening, landscaping,digging in the ground, planting trees andwatering the plants"),
-    Spot("65 Groot Street",
+    SpotModel("65 Groot Street",
         "Need help with gardening, landscaping,digging in the ground, planting trees andwatering the plants"),
-    Spot("78 Groot Street",
+    SpotModel("78 Groot Street",
         "Need help with gardening, landscaping,digging in the ground, planting trees andwatering the plants"),
-    Spot("89 Groot Street",
+    SpotModel("89 Groot Street",
         "Need help with gardening, landscaping,digging in the ground, planting trees andwatering the plants"),
-    Spot("105 Groot Street",
+    SpotModel("105 Groot Street",
         "Need help with gardening, landscaping,digging in the ground, planting trees andwatering the plants"),
   ];
 

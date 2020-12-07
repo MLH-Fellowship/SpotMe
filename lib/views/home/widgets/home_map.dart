@@ -3,12 +3,12 @@ import 'dart:async';
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MainScreenMap extends StatefulWidget {
+class HomeMapWidget extends StatefulWidget {
   @override
-  State<MainScreenMap> createState() => MainScreenMapState();
+  State<HomeMapWidget> createState() => HomeMapWidgetState();
 }
 
-class MainScreenMapState extends State<MainScreenMap> {
+class HomeMapWidgetState extends State<HomeMapWidget> {
   Completer<GoogleMapController> _controller = Completer();
 
   static final CameraPosition _kGooglePlex = CameraPosition(

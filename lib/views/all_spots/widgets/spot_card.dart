@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:spot_me/colors.dart';
 
 class SpotCard extends StatelessWidget {
   final String title;

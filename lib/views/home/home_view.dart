@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-import 'greeting_texts.dart';
-import 'main_screen_action_buttons.dart';
-import 'main_screen_map.dart';
+import 'widgets/greeting_texts.dart';
+import 'widgets/home_action_buttons.dart';
+import 'widgets/home_map.dart';
 
-class MainScreen extends StatelessWidget {
+class HomeView extends StatelessWidget {
   final String title;
 
-  const MainScreen({Key key, this.title}) : super(key: key);
+  const HomeView({Key key, this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MainScreenMap(),
+      body: HomeMapWidget(),
       bottomSheet: BottomSheet(
         clipBehavior: Clip.antiAliasWithSaveLayer,
         elevation: 30,
@@ -24,9 +24,9 @@ class MainScreen extends StatelessWidget {
           width: double.infinity,
           child: Column(
             children: [
-              GreetingTexts(),
+              GreetingTextsWidget(),
               SizedBox(height: 20),
-              MainScreenActionButtons(),
+              HomeActionButtonsWidget(),
             ],
           ),
         ),

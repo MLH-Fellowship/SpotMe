@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:spot_me/colors.dart';
-import 'package:spot_me/widgets/all_spots_screen/all_spots_screen.dart';
-import 'package:spot_me/widgets/create_spot_screen/create_spot_screen.dart';
-
+import 'package:spot_me/shared/colors.dart';
+import '../../all_spots/all_spots_view.dart';
+import '../../create_spot/create_spot_view.dart';
 import 'action_button.dart';
 
-class MainScreenActionButtons extends StatelessWidget {
-  const MainScreenActionButtons({
+class HomeActionButtonsWidget extends StatelessWidget {
+  const HomeActionButtonsWidget({
     Key key,
   }) : super(key: key);
 
@@ -21,10 +20,10 @@ class MainScreenActionButtons extends StatelessWidget {
           children: [
             Hero(
               tag: "need",
-              child: ActionButton(
+              child: ActionButtonWidget(
                 text: "Need volunteers",
                 onPressed: () {
-                  Get.to(AllSpotsScreen());
+                  Get.to(AllSpotsView());
                 },
                 color: AppColors.blueColor,
               ),
@@ -38,10 +37,10 @@ class MainScreenActionButtons extends StatelessWidget {
             SizedBox(width: 25),
             Hero(
               tag: "create",
-              child: ActionButton(
+              child: ActionButtonWidget(
                 text: "Want to volunteer",
                 onPressed: () {
-                  Get.to(CreateSpotScreen());
+                  Get.to(CreateSpotView());
                 },
                 color: AppColors.magentaColor,
               ),
