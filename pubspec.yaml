@@ -15,8 +15,7 @@ dependencies:
   weather: ^1.2.4
   geolocator: ^6.1.10
   google_maps_flutter: ^1.0.6
-
-  cupertino_icons: ^1.0.0
+  sliding_up_panel: ^1.0.2
 
 dev_dependencies:
   flutter_test:

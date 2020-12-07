@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spot_me/shared/colors.dart';
-import '../../all_spots/all_spots_view.dart';
 import '../../create_spot/create_spot_view.dart';
 import 'action_button.dart';
 
 class HomeActionButtonsWidget extends StatelessWidget {
-  const HomeActionButtonsWidget({
-    Key key,
-  }) : super(key: key);
+  final Function() onWantToVolunteerPressed;
+
+  const HomeActionButtonsWidget(
+      {Key key, @required this.onWantToVolunteerPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +19,10 @@ class HomeActionButtonsWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Hero(
-              tag: "need",
-              child: ActionButtonWidget(
-                text: "Need volunteers",
-                onPressed: () {
-                  Get.to(AllSpotsView());
-                },
-                color: AppColors.blueColor,
-              ),
+            ActionButtonWidget(
+              text: "Want to volunteer",
+              onPressed: onWantToVolunteerPressed,
+              color: AppColors.blue,
             ),
             SizedBox(width: 25),
             Container(
@@ -38,11 +34,11 @@ class HomeActionButtonsWidget extends StatelessWidget {
             Hero(
               tag: "create",
               child: ActionButtonWidget(
-                text: "Want to volunteer",
+                text: "Create volunteers",
+                color: AppColors.magenta,
                 onPressed: () {
                   Get.to(CreateSpotView());
                 },
-                color: AppColors.magentaColor,
               ),
             ),
           ],

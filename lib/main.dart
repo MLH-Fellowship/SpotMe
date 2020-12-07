@@ -12,12 +12,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Spot Me',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        appBarTheme:
-            AppBarTheme(color: Colors.white, brightness: Brightness.light),
-      ),
-      home: HomeView(title: 'Spot Me'),
+      theme: ThemeData.light(),
+      home: HomeView(),
     );
   }
 }

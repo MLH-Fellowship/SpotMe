@@ -11,7 +11,6 @@ class SpotCard extends StatelessWidget {
     return Column(children: [
       Container(
           padding: EdgeInsets.all(20),
-          width: MediaQuery.of(context).size.width * 0.90,
           color: Colors.black,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

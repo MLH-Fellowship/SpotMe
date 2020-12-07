@@ -10,10 +10,10 @@ class CreateSpotView extends StatelessWidget {
         appBar: AppBar(
           title: Text("Create a spot"),
           elevation: 0,
-          backgroundColor: AppColors.magentaColor,
+          backgroundColor: AppColors.magenta,
           brightness: Brightness.dark,
         ),
-        body: Container(color: AppColors.magentaColor),
+        body: Container(color: AppColors.magenta),
       ),
     );
   }

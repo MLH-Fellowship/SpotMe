@@ -1,35 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
+import '../../shared/colors.dart';
 import 'widgets/greeting_texts.dart';
 import 'widgets/home_action_buttons.dart';
 import 'widgets/home_map.dart';
+import '../all_spots/all_spots_view.dart';
 
-class HomeView extends StatelessWidget {
-  final String title;
+class HomeView extends StatefulWidget {
+  @override
+  _HomeViewState createState() => _HomeViewState();
+}
 
-  const HomeView({Key key, this.title}) : super(key: key);
-
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
+    final _pc = PanelController();
+
     return Scaffold(
-      body: HomeMapWidget(),
-      bottomSheet: BottomSheet(
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        elevation: 30,
-        onClosing: () {},
-        enableDrag: false,
-        builder: (context) => Container(
-          color: Colors.white,
-          height: 250,
-          width: double.infinity,
+      body: SlidingUpPanel(
+        minHeight: 200,
+        maxHeight: MediaQuery.of(context).size.height * 0.8,
+        renderPanelSheet: false,
+        controller: _pc,
+        body: HomeMapWidget(),
+        collapsed: Container(
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(24.0),
+                topRight: Radius.circular(24.0)),
+          ),
           child: Column(
             children: [
               GreetingTextsWidget(),
               SizedBox(height: 20),
-              HomeActionButtonsWidget(),
+              HomeActionButtonsWidget(onWantToVolunteerPressed: () {
+                if (_pc.isAttached) _pc.open();
+              }),
             ],
           ),
         ),
+        panel: AllSpotsView(),
       ),
     );
   }
