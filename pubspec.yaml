@@ -1,7 +1,8 @@
 name: spot_me
-description: SpotMe is an application to find volunteers
+description: Spot me
 
 publish_to: 'none'
+
 version: 1.0.0+1
 
 environment:
@@ -10,22 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  firebase_core: ^0.5.3
-  cloud_firestore: ^0.14.4
-
-  firebase_analytics: ^6.3.0
-  firebase_crashlytics: ^0.2.4
-
-  rxdart: ^0.24.1
-  geoflutterfire: ^2.2.1
-  location: ^3.1.0
+  get: ^3.22.2
+  weather: ^1.2.4
+  geolocator: ^6.1.10
   google_maps_flutter: ^1.0.6
-
-  flutter_svg: ^0.19.0
-
-  connectivity: ^2.0.2
-  dartz: ^0.9.1
+  sliding_up_panel: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -33,17 +23,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - assets/images/
-    - assets/fonts/
-  fonts:
-    - family: Open Sans
-      fonts:
-        - asset: assets/fonts/OpenSans-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/OpenSans-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/OpenSans-Light.ttf
-          weight: 300
-        - asset: assets/fonts/OpenSans-Regular.ttf
-          weight: 400
