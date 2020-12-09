@@ -30,7 +30,7 @@ class SpotCard extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 30)),
                 SizedBox(height: 20),
                 Text(this.description,
-                    style: TextStyle(color: Colors.white, fontSize: 20))
+                    style: TextStyle(color: Colors.white, fontSize: 18))
               ],
             )),
       ),
